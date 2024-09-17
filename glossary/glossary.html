@@ -1,0 +1,136 @@
+<script language="JavaScript" type="text/JavaScript">		
+	var new_window
+	
+	function open_window(num){
+		var window_width = 350
+		var window_height = 200
+		var window_left = (screen.availWidth / 2 ) - (window_width / 2)		
+		var window_top = (screen.availHeight / 2) - (window_height / 2)		
+		var window_dimensions = "height=" + window_height + ",width=" + window_width + ",left=" + window_left + ",top=" + window_top
+		if (!window_available()) {		
+			new_window = window.open("", "", window_dimensions)
+		}
+		else {		
+			new_window.focus()
+			new_window.document.clear()
+		}
+		new_window.document.writeln('<html>')
+	
+		new_window.document.writeln('<head>')
+		new_window.document.writeln('<title>Glossary</title>')
+		new_window.document.writeln('<link href="Template018.css" rel="stylesheet" type="text/css">')
+		new_window.document.writeln('</head>')
+		new_window.document.writeln('<body>')
+		
+		new_window.document.writeln('<p>')
+		new_window.document.writeln('<b>' + A[num].name + '&nbsp;-&nbsp;</b>' + A[num].def)
+		new_window.document.writeln('</p><br>')
+		
+		new_window.document.writeln('</body>')
+		new_window.document.writeln('</html>')
+		
+		new_window.document.close()	
+	}
+	
+	function window_available(){
+		if (!new_window) {
+			return false
+		}
+		else if (new_window.closed){
+			return false
+		}
+		else {
+			return true
+		}
+	}	
+
+	var A = new Array(35)	
+	populate_term_array()
+	
+	function term(name, def){
+		this.name = name
+		this.def = def
+	}
+	function populate_term_array(){
+		A[1] = new term("AAEL", "American Association of Equipment Lessors, a trade group founded 26 years ago, now representing over 960 equipment leasing companies. Based in Arlington, VA.")
+		A[2] = new term("ACCELERATED COST RECOVERY SYSTEM", "The depreciation schedule of the Economic Recovery Tax Act of 1981 (ERTA), modified by the Tax Equity and Fiscal Responsibility Act of 1982 (TEFRA), that provided accelerated write-offs of plant and equipment capital cost. Equipment is classified as 3, 5, or 10 year property. the Accelerated Cost Recovery System (ACRS) replaced the asset depreciation range (ADR) system which was built on the concept of useful life.")
+		A[3] = new term("ACRS (MODIFIED)", "The Tax Reform Act of 1986 modified ACRS by prescribing depreciation methods for each ACRS class in lieu of statutory tables. Equipment is assigned among 3 year, 5 year, 7 year, 10 year, 15 year or 20 year classes depending on ADR lives.")
+		A[4] = new term("ALTERNATIVE MINIMUM TAX", "An alternative, separate tax calculation based on the taxpayer's regular taxable income, increased by the taxpayer's preference for the year. The resulting amount is called the alternative minimum taxable income (MATI). After certain exemptions and offsets, the taxpayer determines his AMT and is required to pay the larger of the regular tax or alternative minimum tax. Among the preferences which can increase the taxpayers AMTI is the accelerated portion of depreciation, thereby making it more likely that a taxpayer that buys equipment may be subject to AMT rather than the regular tax.")
+		A[5] = new term("BARGAIN PURCHASE OPTION", "A lease provision allowing the lessee, at its option, to purchase the equipment for a price predetermined at lease inception, that is substantially lower than the expected fair market value at the date the option can be exercised.")
+		A[6] = new term("BARGAIN RENEWAL OPTION", "A lease provision allowing the lessee at its option, to renew the equipment lease for a rental rate predetermined at lease inception, that is substantially lower than the expected fair market rate at the date the option can be exercised.")
+		A[7] = new term("BIG TICKET", "The market segment represented by lease financing over $3 million dominated by leveraged leases.")
+		A[8] = new term("BROKER", "A company or person who arranges, for a fee, transactions between lessee's and lessors of an asset.")
+		A[9] = new term("CAPITAL LEASE", "Type of lease classified and accounted for by a lessee as a purchase and by the lessor as a sale or financing, if it meets any one of the following criteria: (a) the lessor transfers ownership to the lessee at the end of the lease term; (b) the lease contains an option to purchase the assets at a bargain price; (c) the lease term is equal to 75% or more of the estimated economic life of the property (exceptions for used property leased toward the end of its useful life); or (d) the present value of minimum lease rental payments is equal to 90% or more of the fair market value of the leased asset related to investment tax credits retained by the lessor. (Also see finance lease.)")
+		A[10] = new term("CLOSED END LEASE", "A true lease in which the lessor assumes the depreciation risk. The lessee bears no obligation at the end of the lease. This term is used to distinguish the lease from an open end lease. This term is used in auto leasing.")		
+		A[11] = new term("CONDITIONAL SALE", "Also known as a security agreement. An agreement with an option to purchase the leased property at the expiration of the lease term at a bargain purchase price. This purchase price is predetermined, and the user of the equipment is treated from the start as the owner of the equipment.")
+		A[12] = new term("CONVENTIONAL TRUE LEASE", "See True Lease.")
+		A[13] = new term("EFFECTIVE LEASE RATE", "The effective lease rate (for the lessee) of the cash flow resulting from a lease transaction. To compare this rate with a loan interest rate, a company must include in the cash flow any effect transactions have on federal tax liabilities.")
+		A[14] = new term("FAIR MARKET PURCHASE OPTION", "An option to purchase leased property at the end of the lease term at its then fair market value. The lessor does not have the ability to retain title to the equipment if the lessee chooses to exercise the purchase option.")
+		A[15] = new term("FASB 13", "Statement issued by the Financial Accounting Standards Board establishing financial accounting standards for lessees and lessors.")
+		A[16] = new term("FINANCE LEASE", "(See Single Investor Lease for comparison.) General term applies to most types of equipment leases. Typically, a finance lease is a full-payout, uncancellable agreement, and the lessee is responsible for maintenance, taxes, and insurance.")
+		A[17] = new term("FULL PAYOUT LEASE", "A lease in which the cash flows will return to the lessor the acquisition cost of the asset, overhead and an acceptable return on investment.")
+		A[18] = new term("GUIDELINE LEASE", "A lease written under criteria or 'Guidelines' established by the IRS to determine the availability of tax benefits to the lessor.")
+		A[19] = new term("INCOME FUNDS", "A limited partnership investing in a portfolio of short-term leases, with moderate or zero leverage, emphasizing cash distribution other than tax shelter.")
+		A[20] = new term("INDEMNITY CLAUSE", "A clause in which the lessee indemnifies the lessor from loss of tax benefits.")
+		A[21] = new term("LEASE", "A contract in which one party conveys the use of an asset to another party for a specific period of time at a predetermined rate.")
+		A[22] = new term("LEASE RATE", "(Rental payment) - The periodic rental payment to a lessor for the use of assets. Others may define lease rate as the implicit interest rate in minimum lease payments.")
+		A[23] = new term("LESSOR", "Usually the owner of equipment being leased to a lessee or user.")
+		A[24] = new term("LEVERAGED LEASE", "In this type of lease, the lessor provides an equity position (usually 20 to 40 percent) of the equipment cost and the lenders provide the balance on a nonrecourse basis. The lessor receives the tax benefits of ownership.")
+		A[25] = new term("MASTER LEASE", "A contract where the lessee leases currently needed assets and is able to acquire other assets under the same basic terms and conditions without negotiating a new contract.")
+		A[26] = new term("MIDDLE MARKET", "A market segment generally represented by financing under $3 million and dominated by single investor leases.")
+		A[27] = new term("NET LEASE", "A lease where payments to the lessor do not include insurance and maintenance, which are paid separately by the lessee.")
+		A[28] = new term("NON FULL PAYOUT LEASE", "A lease in which the cash flows will not be sufficient to cover the full cost of the equipment, the cost of financing, the cost of administration and provide a satisfactory return. The lessor looks to the residual to realize profit.")
+		A[29] = new term("OPEN END LEASE", "(See closed end lease) - A lease which provides the provision for extending the lease on predetermined terms after a set period of time.")
+		A[30] = new term("OPERATING LEASE", "An operating lease is any lease which is not a capital lease. These are generally used for short-term leases of equipment. The lessee can acquire the use of equipment for just a fraction of the useful life of the asset. (Additional services such as maintenance and insurance may be provided by the lessor.)")
+		A[31] = new term("PRESENT VALUE", "The current equivalent of payments or a stream of payments to be received at various times in the future. The present value will vary with the discount interest factor applied to future payments.")
+		A[32] = new term("PURCHASE OPTION", "A provision by which a lessee has the right to purchase the equipment at the end of the lease. The purchase option may be stated at a specific dollar amount or at fair market value.")
+		A[33] = new term("RENEW OPTION", "The option to renew a lease contract when it ends.")
+		A[34] = new term("RESIDUAL VALUE", "The value of an asset at the conclusion of a lease.")
+		A[35] = new term("SALE AND LEASEBACK", "An arrangement where equipment is purchased by a lessor from the company owning and using it. The lessor then becomes the owner and leases it back to the original owner, who continues to use the equipment.")	
+	}
+	
+	function letter(myvar) {				
+		temp_list = ""	
+			for (var i = 1; i < A.length; i++)	{
+				if (A[i].name.charAt(0) == myvar) {					
+					temp_list += "<p><a onclick='open_window(" + i + ")' href='#'>" + A[i].name + "</a><p><hr>"				
+				}
+			}									
+		document.getElementById("wordlist").innerHTML  = "<p>" + temp_list + "</p>"	
+	}
+</script>
+
+<html>
+<link href="Template018.css" rel="stylesheet" type="text/css">
+<body leftmargin="0" rightmargin="0"  bottommargin="0" topmargin="0" marginheight="0" marginwidth="0" bgcolor="1a3450">
+<table width="100" border="0" align="left"  class="Back1">
+  <tr> 
+    <td><div align="center"><img src="../images/glossary.jpg" width="60" height="15"></div></td>
+  </tr>
+  <tr> 
+    <td>
+		<p  align="center"> 
+		<a onClick="letter('A')" href="#" >A</a>&nbsp;| 
+        <a onClick="letter('B')" href="#">B</a>&nbsp;| <a onClick="letter('C')"  href="#">C</a>&nbsp;| 
+        <a onClick="letter('E')" href="#">E</a>&nbsp;| <a onClick="letter('F')" href="#">F</a>&nbsp;| 
+        <a onClick="letter('G')" href="#">G</a>&nbsp;| <a onClick="letter('I')"  href="#">I</a>&nbsp;| 
+        <a onClick="letter('L')" href="#">L</a>&nbsp;| <a onClick="letter('M')" href="#">M</a>&nbsp;| 
+        <a onClick="letter('N')" href="#">N</a>&nbsp;| <a onClick="letter('O')"  href="#">O</a>&nbsp;| 
+        <a onClick="letter('P')" href="#">P</a>&nbsp;| <a onClick="letter('R')" href="#">R</a>&nbsp;| 
+        <a onClick="letter('S')" href="#">S</a>&nbsp;| 
+		</p>
+	</td>
+  </tr>
+  <tr> 
+    <td><p>&nbsp;</p></td>
+  </tr>
+  <tr> 
+    <td id="wordlist"><p>&nbsp;</p></td>
+  </tr>
+  
+</table>
+<br>
+<p>&nbsp;</p>
+</body>
+</html>
+
